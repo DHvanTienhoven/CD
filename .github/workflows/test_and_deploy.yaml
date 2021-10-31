@@ -35,4 +35,4 @@ jobs:
         run:
           pip install gunicorn
       - name: push files
-        run: scp -r continuous_deployment ${{secrets.SSH_USERNAME}}@${{SSH_HOST}}:/home/
+        run: scp -r continuous_deployment ${{secrets.SSH_USERNAME}}@${{secrets.SSH_HOST}}:/home/
