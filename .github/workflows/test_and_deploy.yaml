@@ -24,6 +24,8 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: copy files
         uses: appleboy/scp-action@master
         with:
