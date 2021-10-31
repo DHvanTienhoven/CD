@@ -24,7 +24,7 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy flask app
+      - name: connect to server
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}}
@@ -34,5 +34,5 @@ jobs:
       - name: install dependencies
         run:
           pip install gunicorn
-      - name: set environment
-        run: gunicorn main:app -b 0.0.0.0
+      - name: push files
+        run: scp -r continuous_deployment ${{secrets.SSH_USERNAME}}@${{SSH_HOST}}:/home/
