@@ -28,7 +28,7 @@ jobs:
       #  uses: actions/checkout@v2
       - name: creating folder
         uses: actions/checkout@v2
-        run: mkdir ~/distfiles
+      - run: mkdir ~/distfiles
       - uses: actions/download-artifact@v2
         with:
           name: distfiles
