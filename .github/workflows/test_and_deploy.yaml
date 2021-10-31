@@ -34,4 +34,4 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           passphrase: ${{secrets.SSH_PASSPHRASE}}
           source: '*'
-          target: 'var/www/home/'
+          target: '/home/test/'
