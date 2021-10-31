@@ -26,6 +26,13 @@ jobs:
     steps:
       #- name: Checkout repository
       #  uses: actions/checkout@v2
+      - name: creating folder
+        uses: actions/checkout@v2
+        run: mkdir ~/distfiles
+      - uses: actions/download-artifact@v2
+        with:
+          name: distfiles
+          path: distfiles
       - name: copy files
         uses: appleboy/scp-action@master
         with:
@@ -33,5 +40,5 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
           passphrase: ${{secrets.SSH_PASSPHRASE}}
-          source: './*'
+          source: 'distfiles/*'
           target: '/home/'
