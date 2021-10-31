@@ -31,7 +31,7 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
           passphrase: ${{secrets.SSH_PASSPHRASE}}
-          run: scp -r continuous_deployment ${{secrets.SSH_USERNAME}}@${{secrets.SSH_HOST}}:/home/
+          script: scp -r continuous_deployment ${{secrets.SSH_USERNAME}}@${{secrets.SSH_HOST}}:/home/
       #- name: install dependencies
       #  run:
       #    pip install gunicorn
