@@ -13,3 +13,7 @@ def greet():
 @app.route('/greet/<example_name>')
 def greet_user(example_name):
     return f'<h1>Hello, {example_name}!</h1>'
+
+@app.route('/cow')
+def cow():
+    return '<p>MOoooOo!<p>'

@@ -25,3 +25,9 @@ def test_greet(client):
 
     assert response.status_code == 200
     assert response.data == b'<h1>Hello, bob!</h1>'
+
+def test_cow(client):
+    response = client.get('/cow')
+
+    assert response.status_code == 200
+    assert response.data == b'<p>Home, sweet home.</p>'
