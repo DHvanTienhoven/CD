@@ -30,4 +30,4 @@ def test_cow(client):
     response = client.get('/cow')
 
     assert response.status_code == 200
-    assert response.data == b'<p>Home, sweet home.</p>'
+    assert response.data == b'<p>MOoooOo!<p>'
